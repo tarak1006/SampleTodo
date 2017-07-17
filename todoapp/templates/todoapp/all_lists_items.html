@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    {% for key,item in itemslist.items%}
+    <br><br>
+    <h1>{{ key}}</h1>
+    <ol>
+    {% for  j in item %}
+<li> {{j.description}}</a> <br>{{j.completed}} <br>{{j.due_by}}  </li>
+{%endfor %}
+    </ol>
+{%endfor %}
+
+
+
+
+</body>
+</html>

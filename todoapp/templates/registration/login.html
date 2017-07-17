@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+ {% load static %}
+{% csrf_token %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+    <!-- CSS  -->
+ <!-- CSS  -->
+  <link href= "https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href=  "{% static 'css/materialize.css'  %}"type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href= "{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src= "{% static 'js/init.js' %}"></script>
+
+
+
+
+</head>
+
+<body>
+{% block content %}
+  <!--navbar-->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Todo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="login.html">Login</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+         <li><a href="#">todo</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+<!--{% if form.has_errors %}-->
+<!--<p>Your username and password didn't match. Please try again.</p>-->
+<!--{% endif %}-->
+<!--{% if form.errors %}-->
+    <!--{% for field in form %}-->
+        <!--{% for error in field.errors %}-->
+            <!--<div class="alert alert-danger">-->
+                <!--<strong>{{ error|escape }}</strong>-->
+            <!--</div>-->
+        <!--{% endfor %}-->
+    <!--{% endfor %}-->
+    <!--{% for error in form.non_field_errors %}-->
+        <!--<div class="alert alert-danger">-->
+            <!--<strong>{{ error|escape }}</strong>-->
+        <!--</div>-->
+    <!--{% endfor %}-->
+<!--{% endif %}-->
+
+  <!--<form action="" method="post">{% csrf_token %}-->
+       <!--<div class="createlistbody">-->
+  <!--<main>-->
+    <!--<center>-->
+      <!--<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
+      <!--<div class="section"></div>-->
+
+      <!--<h5 class="indigo-text">Login to your Account</h5>-->
+      <!--<div class="section"></div>-->
+
+      <!--<div class="container">-->
+        <!--<div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 10px; border: 1px solid #EEE;">-->
+
+
+            <!--<div class='row'>-->
+              <!--<div class='col s12'>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+                                        <!--<div class="input-field col s12">-->
+
+                                            <!--<label for="id_username">Username</label>-->
+                                            <!--<input id="id_username" type="text" name="username">-->
+
+                                        <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+                                        <!--<div class="input-field col s12">-->
+
+                                          <!--<label for="id_password1">Password</label>-->
+                                          <!--<input id="id_password1" type="text" name="password">-->
+                                        <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+
+
+
+
+
+
+              <!--<label style='float: right;'>-->
+
+							<!--</label>-->
+            <!--</div>-->
+
+            <!--<br />-->
+            <!--<center>-->
+              <!--<div class='row'>-->
+                <!--<button type="submit" class='col s12 btn btn-large waves-effect indigo'>Login</button>-->
+              <!--</div>-->
+            <!--</center>-->
+
+        <!--</div>-->
+      <!--</div>-->
+
+    <!--</center>-->
+
+    <!--<div class="section"></div>-->
+    <!--<div class="section"></div>-->
+  <!--</main>-->
+  <!--</div>-->
+      <!--<input  value="Save">-->
+  <!--</form>-->
+
+<div class="section"></div>
+  <main>
+    <center>
+      <!--<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
+      <div class="section"></div>
+
+      <h5 class="indigo-text">Please, login into your account</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 10px; border: 1px solid #EEE;">
+
+          <form class="col s12" method="post">{% csrf_token %}
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                  <i class="material-icons prefix">email</i>
+                <input class='validate' type='text' name='username' id='id_username' />
+                <label for='id_username'>Enter Username</label>
+              </div>
+            </div>
+
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                   <i class="material-icons prefix">lock </i>
+                <input class='validate' type='password' name='password' id='id_password' />
+                <label for='id_password'>Enter your password</label>
+              </div>
+              <label style='float: right;'>
+								<a class='pink-text' href='#!'><b>Forgot Password?</b></a>
+							</label>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
+              </div>
+            </center>
+          </form>
+        </div>
+      </div>
+      <a href="/todo/register/">Create account</a>
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+
+
+
+{% endblock %}
+</body>
+</html>

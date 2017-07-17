@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for i in list%}
+<h1>Todoitems  of list  {{ i.name}}</h1>
+{%endfor %}<ol>
+{% for item in  items%}
+<li> {{item.description}}</a><br>{{item.completed}} <br>{{item.due_by}}  </li>
+{%endfor %}</ol>
+
+
+
+</body>
+</html>

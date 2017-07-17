@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+ {% load static %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href= "https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href=  "{% static 'css/materialize.css'  %}"type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href= "{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="todoapp/static/js/materialize.js"></script>
+  <script src="todoapp/static/js/init.js"></script>
+<script>
+$( document ).ready(function() {
+    $(".itemsection").hide();
+    $(".listsection").hide();
+});
+</script>
+
+
+</head>
+<body>
+  <!--navbar-->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">StackAPI</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="todolists.html">Logout</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+         <li><a href="#">todo</a></li>
+        <li><a href="todolists.html">Logout</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+ <!--end of navbar-->
+ <br><br>
+ <!--start of lists-->
+  <div class="listsection">
+  <table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>listname</th>
+            <th>creation date</th>
+            <th>Username</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Abby</td>
+            <td>Barrett</td>
+            <td>@abbeme</td>
+            <td>
+               <i class="material-icons prefix"> <button class="blue-text">view_list</button></i>
+                <a class="teal-text" href="login.html"><i class="material-icons prefix">delete</i></a>
+                  <a class="red-text" href="login.html"><i class="material-icons prefix">note_add</i></a>
+                <a class="green-text" href="login.html"><i class="material-icons prefix">mode_edit</i></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Danny</td>
+            <td>Collins</td>
+            <td>@dennis</td>
+            <td>
+                <a class="blue-text" href="login.html"> <i class="material-icons prefix">view_list</i></a>
+                  <a class="teal-text" href="login.html"><i class="material-icons prefix">delete</i></a>
+                <a class="red-text" href="login.html"><i class="material-icons prefix">note_add</i></a>
+                <a class="green-text" href="login.html"><i class="material-icons prefix">mode_edit</i></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Clara</td>
+            <td>Ericson</td>
+            <td>@claris</td>
+            <td>
+                 <a class="blue-text" href="login.html"> <i class="material-icons prefix">view_list</i></a>       
+                  <a class="teal-text" href="login.html"><i class="material-icons prefix">delete</i></a>
+                   <a class="red-text" href="login.html"><i class="material-icons prefix">note_add</i></a>
+         <a class="green-text" href="login.html"><i class="material-icons prefix">mode_edit</i></a>
+
+         
+
+
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+</div>
+<!--end of lists-->
+
+<!--start of items-->
+  <div class="itemsection">
+  <table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>itemdescription</th>
+            <th>completed</th>
+            <th>dueby</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Abby</td>
+            <td>Barrett</td>
+            <td>@abbeme</td>
+            <td>
+                <a class="blue-text" href="login.html"> <i class="material-icons prefix">view_list</i></a>
+                <a class="teal-text" href="login.html"><i class="material-icons prefix">delete</i></a>
+                  <a class="red-text" href="login.html"><i class="material-icons prefix">note_add</i></a>
+                <a class="green-text" href="login.html"><i class="material-icons prefix">mode_edit</i></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Danny</td>
+            <td>Collins</td>
+            <td>@dennis</td>
+            <td>
+                <a class="blue-text" href="login.html"> <i class="material-icons prefix">view_list</i></a>
+                  <a class="teal-text" href="login.html"><i class="material-icons prefix">delete</i></a>
+                <a class="red-text" href="login.html"><i class="material-icons prefix">note_add</i></a>
+                <a class="green-text" href="login.html"><i class="material-icons prefix">mode_edit</i></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Clara</td>
+            <td>Ericson</td>
+            <td>@claris</td>
+            <td>
+                 <a class="blue-text" href="login.html"> <i class="material-icons prefix">view_list</i></a>       
+                  <a class="teal-text" href="login.html"><i class="material-icons prefix">delete</i></a>
+                   <a class="red-text" href="login.html"><i class="material-icons prefix">note_add</i></a>
+         <a class="green-text" href="login.html"><i class="material-icons prefix">mode_edit</i></a>
+
+         
+
+
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<a class="waves-effect waves-light btn">viewlists</a>
+
+
+</div>
+<!--end of items-->
+
+<a class="waves-effect waves-light btn" href=id="show">viewlists</a>
+<a class="waves-effect waves-light btn" id="hide">viewitems</a>
+
+<script>
+  <!--$("#hide").click(function(){-->
+    <!--$(".listsection").hide();-->
+    <!--$(".itemsection").show();-->
+<!--});-->
+
+
+$("#hide").click(function(){
+    $.get("/todo/viewlists/", function(data, status){
+        console.log(data);
+        for(i=0;i<3;i++){
+        console.log(data[i].id,data[i].name,data[i].creation_date);
+        }
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+});
+
+
+
+$("#show").click(function(){
+    $(".itemsection").hide();
+    $(".listsection").show();
+});
+</script>
+
+
+
+
+   <!--button bootom right -->
+   <div class="fixed-action-btn vertical">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+  </div>
+  <!--button botton right end-->
+<br><br><br><br><br>
+<!--start of footer-->
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  
+
+  </body>
+</html>

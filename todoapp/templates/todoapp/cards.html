@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+ {% load static %}
+{% csrf_token %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+    <!-- CSS  -->
+ <!-- CSS  -->
+  <link href= "https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href=  "{% static 'css/materialize.css'  %}"type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href= "{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src= "{% static 'js/init.js' %}"></script>
+
+
+
+
+</head>
+<body>
+  <!--navbar-->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container center"><a id="logo-container" href="#" class="brand-logo">Todo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="login.html">Login</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+         <li><a href="#">todo</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <h4>Hii {{ user.username }}!</h4>
+<br>
+<button class='col s12 btn btn-large waves-effect waves-light blue' id="backtolists_button">Back to lists</button>
+
+
+
+  <!--CREATE LIST SECTION-->
+  <!--<div class="section"></div>-->
+
+  <div class="createlistbody">
+  <main>
+    <center>
+      <!--<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
+      <div class="section"></div>
+
+      <h5 class="indigo-text">create your list</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 10px; border: 1px solid #EEE;">
+
+
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            <div class="row">
+                                        <!--<div class="input-field col s12">-->
+
+                                            <!--<label for="list_id">id</label>-->
+                                            <!--<input id="list_id" type="text" name="list_id">-->
+
+                                        <!--</div>-->
+            </div>
+            <div class="row">
+                                        <div class="input-field col s12">
+
+                                          <label for="list_name">List_name</label>
+                                          <input id="list_name" type="text" name="list_name">
+                                        </div>
+            </div>
+        
+            <div class="row">
+              <label for="creation_date" style="font-size: 15px;float: left;">Creationdate</label>
+                                        <div class="input-field col s12">
+
+                                          <!--<label for="creation_date">Creationdate</label>-->
+                                          <input id="creation_date" type="date" class="datepicker" name="creation_date">
+                                        </div>
+            </div>
+            <div class="row">
+
+
+
+
+
+
+              <label style='float: right;'>
+
+							</label>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button class='col s12 btn btn-large waves-effect indigo' id="addlistid">Add list</button>
+              </div>
+            </center>
+
+        </div>
+      </div>
+
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+  </div>
+
+<!--UPDATE LIST SECTION-->
+
+  <div class="updatelistbody">
+  <main>
+    <center>
+      <!--<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
+      <div class="section"></div>
+
+      <h5 class="indigo-text">Update your list</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 10px; border: 1px solid #EEE;">
+
+       
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            
+            <div class="row">
+                                        <div class="input-field col s12">
+
+                                          <label for="update_list_name">List_name</label>
+                                          <input id="update_list_name" type="text" name="update_list_name">
+                                        </div>
+            </div>
+            <div class="row">
+              <label for="update_creation_date" style="font-size: 15px;float: left;">Creationdate</label>
+              
+                                        <div class="input-field col s12">
+
+                                          <!--<label for="update_creation_date">Creationdate</label>-->
+                                          <input id="update_creation_date" type="date" class="datepicker" name="update_creation_date">
+                                        </div>
+            </div>
+            <div class="row">
+              <label style='float: right;'>
+							</label>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button class='col s12 btn btn-large waves-effect indigo' id="updatelistid">Update list</button>
+              </div>
+            </center>
+        
+        </div>
+      </div>
+      
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+  </div>
+
+
+
+ <!--CREATE ITEM SECTION-->
+
+  <div class="createitembody">
+  <main>
+    <center>
+      <!--<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
+      <div class="section"></div>
+
+      <h5 class="indigo-text">create your item</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 10px; border: 1px solid #EEE;">
+
+       
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            <div class="row">
+                                        <div class="input-field col s12">
+
+                                            <label for="createitem_descid">Item description</label>
+                                            <input id="createitem_descid" type="text" name="createitem_descid">
+
+                                        </div>
+            </div>
+            <div class="row">
+                                        <!--<div class="input-field col s12">
+
+                                          <label for="createitem_compid">completed</label>
+                                          <input id="createitem_compid" type="text" name="createitem_compid">
+                                        </div>-->
+                                        <label style="font-size: 15px;float: left;">Completed</label>
+  <select class="browser-default" name="createitem_compid">
+    <option disabled selected>Choose your option</option>
+    <option value="true">True</option>
+    <option value="false">False</option>
+    
+  </select>
+            </div>
+
+  
+
+            <div class="row">
+              <label for="createitem_dueid" style="font-size: 15px;float: left;">Duebydate</label>
+              
+                                        <div class="input-field col s12">
+
+                                          <!--<label for="createitem_dueid">Dueby date</label>-->
+                                          <input id="createitem_dueid" type="date" class="datepicker" name="createitem_dueid">
+                                        </div>
+            </div>
+            <div class="row">
+
+
+
+
+
+
+              <label style='float: right;'>
+
+							</label>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button class='col s12 btn btn-large waves-effect indigo' id="additemid">Add item</button>
+              </div>
+            </center>
+        
+        </div>
+      </div>
+      
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+  </div>
+
+<!--UPDATE ITEM SECTION-->
+
+
+  <div class="updateitembody">
+  <main>
+    <center>
+      <!--<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
+      <div class="section"></div>
+
+      <h5 class="indigo-text">Update your item</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 10px; border: 1px solid #EEE;">
+
+       
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+
+              <div class="row">
+                                        <div class="input-field col s12">
+
+                                            <label for="updateitem_descid">Item description</label>
+                                            <input id="updateitem_descid" type="text" name="updateitem_descid">
+
+                                        </div>
+            </div>
+            <div class="row">
+                                        <div class="input-field col s12">
+
+                                          <!--<label for="updateitem_compid">completed</label>
+                                          <input id="updateitem_compid" type="text" name="updateitem_compid">-->
+
+                                           <select class="browser-default" name="updateitem_compid">
+    <option disabled selected>Choose your option</option>
+    <option value="true">True</option>
+    <option value="false">False</option>
+    
+  </select>
+                                        </div>
+
+            </div>
+            <div class="row">
+              <label for="creation_date" style="font-size: 15px;float: left;">Duebydate</label>
+              
+
+                                        <div class="input-field col s12">
+
+                                          <!--<label for="upateitem_dueid">Dueby date</label>-->
+                                          <input id="updateitem_dueid" type="date" class="datepicker" name="updateitem_dueid">
+                                        </div>
+            </div>     
+
+
+
+           
+            <div class="row">
+              <label style='float: right;'>
+							</label>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button class='col s12 btn btn-large waves-effect indigo' id="updateitemid">Update item</button>
+              </div>
+            </center>
+        
+        </div>
+      </div>
+      
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+  </div>
+
+
+
+
+  <!--TEST SECTION-->
+  <!--<div class="loginbody">-->
+
+    <!--<center>-->
+
+
+      <!--<div class="container">-->
+        <!--<div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 20px 0px 20px; border: 1px solid #EEE;">-->
+
+          <!--<form class="col s12">-->
+            <!--<div class='row'>-->
+              <!--<div class='col s12'>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+        <!--<div class="input-field col s12">-->
+             <!--&lt;!&ndash;<label for="first_name">First Name</label>&ndash;&gt;-->
+          <!--<input placeholder="id" id="list_id" type="text" class="validate">-->
+
+        <!--</div>-->
+          <!--</div>-->
+
+        <!--<div class="row">-->
+        <!--<div class="input-field col s12">-->
+             <!--&lt;!&ndash;<label for="first_name">First Name</label>&ndash;&gt;-->
+          <!--<input placeholder="Name" id="name" type="text" class="validate">-->
+
+        <!--</div>-->
+          <!--</div>-->
+
+        <!--<div class="row">-->
+        <!--<div class="input-field col s12">-->
+
+          <!--<input placeholder="Creationdate" id="creation_date" type="text" class="validate">-->
+
+        <!--</div>-->
+        <!--</div>-->
+
+
+
+
+
+            <!--<br />-->
+            <!--<center>-->
+              <!--<div class='row'>-->
+                <!--<button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>-->
+              <!--</div>-->
+            <!--</center>-->
+          <!--</form>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<a href="signup.html">Create account</a>-->
+    <!--</center>-->
+
+
+
+    <!--</div>-->
+
+
+
+
+
+
+
+  <!--start of lists-->
+
+  <div class="cardbody">
+       <h5><u>Lists Created</u></h5>
+  <table class="table">
+    <thead>
+        <tr>
+            <th>List id</th>
+            <th>List name</th>
+            <th>completeddate</th>
+            <th></th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+ 
+    <tbody>
+       
+
+    </tbody>
+   
+</table>
+<!--<a class="waves-effect waves-light btn">viewlists</a>-->
+
+
+</div>
+<!--end of lists-->
+
+
+ <!--start of items-->
+
+  <div class="itembody">
+        <h5><u>Items Created</u></h5>
+  <table class="itemtable">
+    <thead>
+        <tr>
+            <th> id</th>
+            <th>item description</th>
+            <th>completed</th>
+            <th>dueby</th>
+            <th></th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+ 
+    <tbody>
+       
+
+    </tbody>
+   
+</table>
+<!--<a class="waves-effect waves-light btn">viewlists</a>-->
+
+
+</div>
+<!--end of items-->
+
+
+
+
+
+
+
+   
+
+ <a class="btn-floating fab waves-effect waves-light red" id="createlistbutton"><i class="material-icons right">add</i></a>
+ <a class="btn-floating fab waves-effect waves-light red" id="createitembutton"><i class="material-icons right">add</i></a>
+
+
+<script type="text/javascript">
+// using csrf token
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+// end of csrf token
+
+
+/////////intial loding of the page(loading lists)
+    $(".createlistbody").hide();
+     $(".updatelistbody").hide();
+      $(".createitembody").hide();
+     $(".updateitembody").hide();
+      $("#createitembutton").hide();
+      $("#backtolists_button").hide();
+     $(".itembody").hide();
+     console.log('entered in funcn');   
+    $.get("/todo/viewlists/", function(data, status){
+        console.log(data);
+        $.each(data, function( index, object ) {
+      console.log(object);
+       var button = $(' <tr id="'+object.id+'">\
+            <th scope="row" class="listid">'+ object.id+'</th>\
+            <td class="listname">'+object.name+'</td>\
+            <td class="listdate">'+object.creation_date+'</td>\
+            <td></td>\
+            <td>\
+               <i class="material-icons prefix"> <button class="blue-text viewitemsbutton">view_list</button></i>\
+               <i class="material-icons prefix"> <button class="blue-text deletelistbutton">delete</button></i>\
+              <i class="material-icons prefix"> <button class="blue-text updatelistbutton">mode_edit</button></i>\
+            </td>\
+        </tr>\
+        ');
+        console.log('entered in funcn');
+    $('.cardbody .table').append(button);
+   
+});
+    });
+$('.cardbody').show();
+      
+
+
+///////start of showing creation list form
+  $("#createlistbutton").click(function(){
+    console.log("in create list function");
+     $('.createlistbody').show();
+     $('.cardbody').hide();
+   $('#createlistbutton').hide();
+
+  });
+  //end of creation list form
+
+ 
+
+//CREATE LIST START[POST]
+$("#addlistid").click(function(){
+    // debugger;
+var obj={};
+obj["id"]='';
+obj["name"]=document.getElementById("list_name").value;
+obj["creation_date"]=document.getElementById("creation_date").value;
+$('#list_name').val('');
+$('#creation_date').val('');
+console.log(obj);
+console.log("before post",obj);
+var k=0;
+$.ajax({
+
+                 url:"/todo/viewlists/",
+                 data:obj,
+                 type:"POST",
+                  beforeSend: function(xhr){
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        
+    },
+                 success: function(data){
+                   obj["id"]=data;
+                  var button = $(' <tr id="'+obj.id+'">\
+            <th scope="row" class="listid">'+obj.id+'</th>\
+            <td class="listname">'+obj.name+'</td>\
+            <td class="listdate">'+obj.creation_date+'</td>\
+            <td></td>\
+            <td>\
+               <i class="material-icons prefix"> <button class="blue-text viewitemsbutton">view_list</button></i>\
+               <i class="material-icons prefix"> <button class="blue-text deletelistbutton">delete</button></i>\
+               <i class="material-icons prefix"> <button class="blue-text updatelistbutton">mode_edit</button></i>\
+            </td>\
+        </tr>\
+   ');
+     $('.createlistbody').hide();
+    
+    $('.cardbody .table').append(button);
+    $('.cardbody').show();
+     $('#createlistbutton').show(); 
+     }  
+});
+});
+/////CREATE LIST END[POST]
+
+
+///UPDATE LIST START
+ $('.cardbody .table').on('click', '.updatelistbutton', function(){
+    $('.updatelistbody').show();
+     $('.cardbody').hide();
+
+    var id=$(this).parent().parent().parent().attr("id");
+    $("#updatelistid").click(function(){
+    // debugger;
+    console.log("updatelist funcn is working");
+var obj={};
+obj["id"]=id;
+obj["name"]=document.getElementById("update_list_name").value;
+obj["creation_date"]=document.getElementById("update_creation_date").value;
+$('#update_list_name').val('');
+$('#update_creation_date').val('');
+console.log(obj);
+$.ajax({
+
+                 url:"/todo/viewlists/"+obj.id+"/",
+                 data:obj,
+                 type:"PUT",
+                  beforeSend: function(xhr) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        
+    },
+                 success: function(data){
+                    $('.cardbody .table #'+id+' .listid').text(obj.id);
+    $('.cardbody .table #'+id+' .listname').text(obj.name);
+    $('.cardbody .table #'+id+' .listdate').text(obj.creation_date);
+     }
+    
+});
+$('.updatelistbody').hide();
+$('.cardbody').show();
+});
+    console.log("hello world");
+});
+//UPDATELIST END
+
+//DELETE LIST START
+ $('.cardbody .table').on('click', '.deletelistbutton', function(){
+   var id=$(this).parent().parent().parent().attr("id");
+   console.log(id);
+   $('.cardbody .table #'+id).empty();
+   $.ajax({
+
+                 url:"/todo/viewlists/"+id+"/",
+                 data:{},
+                 type:"DELETE",
+                  beforeSend: function(xhr) {
+    
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        
+    },
+                 success: function(data){
+                   console.log('sucessfully list is deleted')
+  
+     }
+    
+});
+ });
+//DELETE LIST END
+
+
+
+/////VIEW ITEMS START
+var mainid;
+//ITEMS GET
+ $('.cardbody .table').on('click', '.viewitemsbutton', function(){
+    //debugger
+    $("#createlistbutton").hide();
+    $("#createitembutton").show();
+    $("#backtolists_button").show();
+ mainid=$(this).parent().parent().parent().attr("id");
+$.get("/todo/viewlists/"+mainid+"/", function(data, status){
+        console.log(data);
+        $.each(data, function( index, object ) {
+      console.log(object);
+       var button = $(' <tr id="'+object.id+'">\
+            <th scope="row" class="itemid">'+ object.id+'</th>\
+            <th scope="row" class="itemdesc">'+ object.description+'</th>\
+            <td class="itemcomp">'+object.completed+'</td>\
+            <td class="itemdueby">'+object.due_by+'</td>\
+            <td></td>\
+            <td>\
+               <i class="material-icons prefix"> <button class="blue-text deleteitembutton">delete</button></i>\
+              <i class="material-icons prefix"> <button class="blue-text updateitembutton">mode_edit</button></i>\
+            </td>\
+        </tr>\
+        ');
+        console.log('entered in funcn');
+    $('.itembody .itemtable').append(button);
+   
+});
+    });
+
+    $('.cardbody').hide();
+    $('.itembody').show();
+ });
+ function getMainId(){
+   return mainid;
+ }
+
+    //////start of showing creation item form
+  $("#createitembutton").click(function(){
+    console.log("in create list function");
+     $('.createitembody').show();
+     $('.itembody').hide();
+   $('#createitembutton').hide();
+   $('#backtolists_button').hide();
+
+  });
+  
+  //end of creation list form
+
+ 
+
+//CREATE ITEM START[POST]
+$("#additemid").click(function(){
+    // debugger
+var obj={};
+obj["id"]='';
+obj["description"]=document.getElementById("createitem_descid").value;
+
+obj["completed"]=$('.createitembody select[name=createitem_compid]').val();
+obj["due_by"]=document.getElementById("createitem_dueid").value;
+obj["todolist"]='';
+var main_id=getMainId();
+console.log(main_id)
+$('#createitem_descid').val('');
+$('#createitem_compid').val('');
+$('#createitem_dueid').val('');
+console.log(obj);
+console.log("before post",obj);
+var k=0;
+$.ajax({
+
+                 url:"/todo/viewlists/"+main_id+"/",
+                 data:obj,
+                 type:"POST",
+                  beforeSend: function(xhr){
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        
+    },
+                 success: function(data){
+                   obj["id"]=data;
+                   var button = $(' <tr id="'+obj.id+'">\
+            <th scope="row" class="itemid">'+ obj.id+'</th>\
+            <th scope="row" class="itemdesc">'+ obj.description+'</th>\
+            <td class="itemcomp">'+obj.completed+'</td>\
+            <td class="itemdueby">'+obj.due_by+'</td>\
+            <td></td>\
+            <td>\
+               <i class="material-icons prefix"> <button class="blue-text deleteitembutton">delete</button></i>\
+              <i class="material-icons prefix"> <button class="blue-text updateitembutton">mode_edit</button></i>\
+            </td>\
+        </tr>\
+        ');
+                 
+     $('.createitembody').hide();
+    
+    $('.itembody .itemtable').append(button);
+    $('#backtolists_button').show();
+    $('.itembody').show();
+     $('#createitembutton').show(); 
+     }  
+});
+});
+/////CREATE ITEM END[POST]
+
+
+//UPDATE ITEM START
+ $('.itembody .itemtable').on('click', '.updateitembutton', function(){
+    var id=$(this).parent().parent().parent().attr("id");
+    $('.updateitembody').show();
+     $('.itembody').hide();
+
+   
+    $("#updateitemid").click(function(){
+    // debugger;
+    console.log("updateitem funcn is working");
+   var main_id=getMainId();
+    var obj={};
+obj["id"]=id;
+obj["description"]=document.getElementById("updateitem_descid").value;
+// obj["completed"]=Boolean(document.getElementById("updateitem_compid").value);
+obj["completed"]=$('.updateitembody select[name=updateitem_compid]').val();
+obj["due_by"]=document.getElementById("updateitem_dueid").value;
+obj["todolist"]=main_id;
+
+$('#updateitem_descid').val(' ');
+$('#updateitem_compid').val(' ');
+$('#updateitem_dueid').val(' ');
+
+console.log(obj);
+$.ajax({
+
+                 url:"/todo/viewlists/"+main_id+"/"+id+"/",
+                 data:obj,
+                 type:"PUT",
+                  beforeSend: function(xhr) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        
+    },
+                 success: function(data){
+                    $('.itembody .table #'+id+' .itemid').text(obj.id);
+    $('.itembody .itemtable #'+id+' .itemdesc').text(obj.description);
+    $('.itembody .itemtable #'+id+' .itemcomp').text(obj.completed);
+     $('.itembody .itemtable #'+id+' .itemdueby').text(obj.due_by);
+     }
+    
+});
+$('.updateitembody').hide();
+$('.itembody').show();
+});
+    console.log("hello world");
+});
+//UPDATE ITEM END
+
+//DELETE ITEM START
+ $('.itembody .itemtable').on('click', '.deleteitembutton', function(){
+   var id=$(this).parent().parent().parent().attr("id");
+   console.log(id);
+   var main_id=getMainId();
+   $('.itembody .itemtable #'+id).empty();
+   $.ajax({
+
+                 url:"/todo/viewlists/"+main_id+"/"+id+"/",
+                 data:{},
+                 type:"DELETE",
+                  beforeSend: function(xhr) {
+    
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        
+    },
+                 success: function(data){
+                   console.log('sucessfully item is deleted')
+  
+     }
+    
+});
+ });
+//DELETE ITEM END
+
+
+
+
+
+ $("#backtolists_button").click(function(){
+$('.itembody').hide();
+$('.itembody .itemtable tbody').empty();
+$('.createitembutton').hide();
+$('#backtolists_button').hide();
+$('.cardbody').show();
+$('.createlistbutton').show();
+
+ });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
