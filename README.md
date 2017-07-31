@@ -18,6 +18,8 @@ Front end:Materialize css,JQuery
 Functionality:-
 
 1.This application is a single page application.
+
 2.All data requests are ajax requests which are done by using jquery.
+
 3.Sections are hidden and unhiden based on requirement.
 
